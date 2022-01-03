@@ -1,19 +1,17 @@
-#include <iostream>
-#include <vector>
-#include <map>
+#include "../solution.h"
 using namespace std;
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-    	map<int, int> reversedMap;
+     template<typename T> vector<T> twoSum(std::vector<T>& nums, T target) {
+    	std::unordered_map<T, int> reversedMap;
         for(int i = 0; i < nums.size(); ++i) {
-        	map<int, int>::iterator iter = reversedMap.find(target - nums[i]);
+        	auto iter = reversedMap.find(target - nums[i]);
         	if(iter != reversedMap.end()) {
         		cout << iter->second << ","  << i << endl;
                 //std::initializer_list<T>
                 return {iter->second, i};
         	} else {
-        		reversedMap.emplace(pair<int, int>(nums[i], i));
+        		reversedMap.emplace(pair<T, int>(nums[i], i));
         	}
     	}
         return {};

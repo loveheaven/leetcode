@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "../solution.h"
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
